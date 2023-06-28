@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My project</title>
+    <script src="/app.js" defer></script>
+</head>
+<body class="bg-dark text-light">
+    <div class="container w-50 pr-5">
+        <h1>Calculator</h1>
+        <input 
+            type="number"
+            class="form-control mb-2"
+            placeholder="Enter 1 number"
+            id="input1"
+            value="10"
+        />
+        <input 
+            type="number"
+            class="form-control mb-2"
+            placeholder="Enter 2 number"
+            id="input2"
+            value="5"
+        />
+        <div class="d-flex mb-2">
+            <button class="btn btn-success flex-grow-1 mx-2" id="plus">+</button>
+            <button class="btn btn-danger flex-grow-1 mx-2" id="minus">-</button>
+        </div>
+        <button class="btn btn-outline-info w-100 mb-2" id="submit">
+            Сalculate
+        </button>
+        <div class="text-bg-light p-3 text-center">
+            <h4>Result:</h4>
+            <p id="result" class="mb-0">49</p>
+        </div>
+    </div>
+</body>
+</html>
