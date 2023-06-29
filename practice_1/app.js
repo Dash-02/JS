@@ -1,3 +1,5 @@
+// .getElementByID() - возвращает ссылку на первый объект с указанным значением атрибута ID
+// window.document возвращает ссылку на документ, содержащийся в окне
 const result = document.getElementById('result')
 const input1 = document.getElementById('input1')
 const input2 = document.getElementById('input2')
@@ -11,6 +13,7 @@ let action = '+'
 
 //console.log(typeof sum)
 
+// onclick возвращает обработчик события click на текущем элементе
 calculatePlus.onclick = function () {
     action = '+'
 }
@@ -32,6 +35,7 @@ function printResult(resultElement) {
     } else {
         result.style.color = 'green'
     }
+    // textContent позваоляет задавать или получать текстовое содержимое элемента
     result.textContent = resultElement
 }
 
