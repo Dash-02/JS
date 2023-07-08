@@ -66,9 +66,65 @@ console.log(characters)*/
 console.log(characters.indexOf('Ciri')) // index = 2
 console.log(characters.indexOf('Ciri') !== -1) // true*/
 
+// у значений объекта разные ссылки в памяти
 const people = [
-    { name: 'Mike', budget: 2300 },
+    { name: 'Mike', budget: 3300 },
     { name: 'Walter', budget: 5200 },
     { name: 'Skyler', budget: 4000 },
     { name: 'Jesse', budget: 3200 },
 ]
+
+let finder
+for (let person of people) {
+    if (person.budget === 3200) {
+        finder = person
+    }
+}
+// console.log(finder)
+
+const finder1 = people.find(function(person) {
+    return person.budget === 5200
+    // if (person.budget === 5200) {
+    //     return true
+    // }
+  })
+// console.log(finder1)
+
+const finded = people.find((p) => p.budget === 5200)
+// console.log(finded)
+
+const findInd = people.findIndex(function(person) {
+    return person.budget === 4000
+  })
+// console.log(findInd)
+
+//console.log(people.with(finded, 33))
+
+// filter() создаёт новый массив со всеми элементами, 
+//прошедшими проверку, задаваемую в передаваемой ф-ции
+
+/*
+let sumBudget = 0
+const filtered = people.filter(function(p) {
+    return p.budget < 5000
+})
+console.log(filtered)
+filtered.forEach(function (p) {
+    sumBudget += p.budget
+})
+
+console.log(sumBudget)
+*/
+
+// map() создаёт новый массив с результатом вызова указанной ф-ции для каждого эл-та массива
+// reduce() применяет ф-цию reducer к каждому эл-ту массива (слева-направо), возвращая одно результирующее значение
+
+const sumBudget = people.filter((p) => p.budget < 
+5000).map((p) => p.budget).reduce((acc, p) => acc + p, 0)
+
+// console.log(sumBudget)
+
+const string1 = 'hi, my name is Dash'
+const reversed = string1.split('').reverse().join('a').split('').filter((c) => c != 'a')
+
+console.log(reversed)
