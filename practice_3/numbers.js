@@ -32,7 +32,7 @@ const strFloat = '12.5'
 
 // console.log(+strInt, +strFloat)
 
-console.log(+(0.1 + 0.2).toFixed(1))
+// console.log(+(0.1 + 0.2).toFixed(1))
 
 // BigInt
 // console.log(BigInt(Number.MAX_SAFE_INTEGER + 94224980))
@@ -46,3 +46,28 @@ console.log(+(0.1 + 0.2).toFixed(1))
 // console.log(5n / 2n) // 2
 
 // Math
+
+const num1 = 2.9
+
+/*console.log(Math.E)
+console.log(Math.PI)
+
+console.log(Math.sqrt(25))
+console.log(Math.pow(2, 3))
+console.log(Math.abs(-23))
+console.log(Math.max(2, 5, 34, 5))
+
+console.log(Math.floor(num1)) // окргуление в меньшую сторону
+console.log(Math.ceil(num1)) // округление в большую сторону
+console.log(Math.round(num1)) // округление до ближайшего целочисленное значения
+// возвращает только целую часть числа
+console.log(Math.trunc(num1))
+// случайное значение в указанном диапазоне
+console.log(Math.random())
+*/
+
+function getRandom (min, max) {
+    return Math.floor(Math.random() * (max - min + 1) + min)
+}
+
+console.log(getRandom(10, 100))
