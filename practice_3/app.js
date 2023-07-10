@@ -4,9 +4,16 @@ const btnDate = document.getElementById('date')
 const btnTime = document.getElementById('time')
 let action = 'time'
 
-btnFull.onclick = () => action = 'full'
-btnDate.onclick = () => action = 'date'
-btnTime.onclick = () => action = 'time'
+function bind(mode) {
+    return function () {
+        action = mode
+        dateUpdate()
+    }
+}
+
+btnFull.onclick = bind('full')
+btnDate.onclick = bind('date')
+btnTime.onclick = bind('time')
 
 function dateUpdate() {
     dateTime.textContent = dateFormat(action)
