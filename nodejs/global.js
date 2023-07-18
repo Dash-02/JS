@@ -18,5 +18,8 @@
 
 // console.log(`Hi, ${process.argv[2]}`)
 
-const url = new URL('https://nodejs.org/en/docs')
-console.log(url.hostname)
+const url = new URL('https://nodejs.org/en/docs#name')
+console.log(url.hostname) // получение сведений о хосте
+console.log(url.href) // получение полной ссылки
+console.log(url.pathname) // получение пути (при указании # в url)
+console.log(url.hash) // получение доступа (при указании # в url)
