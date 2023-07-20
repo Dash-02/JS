@@ -1,13 +1,12 @@
 // Модуль событий. С его помощью осуществляется реагирование на 
+// EventEmitter это конструктор, чтобы пользоваться событиями нужно создать его экземпляр
 
-const EventEmitter = require('events') // класс
-const log =require('./log')
-
-const emitter = new EventEmitter()
+const Logger = require('./log')
+const logger = new Logger()
 
 // метод on - слежение за событием
 // создание события
-emitter.on('some_event', (args) => {
+logger.on('some_event', (args) => {
     const { id, text } = args // деструктуризация
     console.log(id, text)
 })
@@ -16,4 +15,4 @@ emitter.on('some_event', (args) => {
 // 1й аргумент - имя события, 2й арг. - данные
 // emitter.emit('some_event', { id: 1, text: 'Event test text' }) // перенесен в log
 
-log('Logged!')
+logger.log('Logged!')
