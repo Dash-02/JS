@@ -4,12 +4,17 @@
 
 const EventEmitter = require('events')
 
-class Logger extends EventEmitter{
+// вместо классического наследования можно воспользоваться модулем util
+const util = require('util')
+
+class Logger {
     log = (msg) => {
         console.log(msg)
         this.emit('some_event', { id: 1, text: 'Event test text' })
     }
 }
+
+util.inherits(Logger, EventEmitter)
 
 module.exports = Logger
 
