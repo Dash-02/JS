@@ -12,26 +12,30 @@ const server = http.createServer((req, res) => {
     const createPath = (page) => path.resolve(__dirname, 'views', `${page}.html`)
 
     let basePath =''
-
+    // базовая имплементация серверного роутинга
     switch (req.url) {
         case '/':
             basePath = createPath('index')
+            res.statusCode = 200
             break;
 
         case '/contacts':
             basePath = createPath('contacts')
+            res.statusCode = 200
             break;
     
         default:
-            basePath = createPath('contacts')
+            basePath = createPath('error')
+            res.statusCode = 404
             break;
     }
 
     // проверка адреса, приходящего запроса
     
-    fs.readFile('./views/index.html', (err, data) => {
+    fs.readFile(basePath, (err, data) => {
         if (err) {
             console.log(err)
+            res.statusCode = 500
             res.end()
          } else {
             res.write(data)
