@@ -14,11 +14,20 @@ const server = http.createServer((req, res) => {
     let basePath =''
     // базовая имплементация серверного роутинга
     switch (req.url) {
+        // обработка нескольких путей
         case '/':
+        case '/home':
+        case '/index.html':
             basePath = createPath('index')
             res.statusCode = 200
             break;
-
+        // redirect
+        case '/about_us':
+            res.statusCode = 301
+            res.setHeader('Location', '/contacts')
+            res.end()
+            break;
+        
         case '/contacts':
             basePath = createPath('contacts')
             res.statusCode = 200
