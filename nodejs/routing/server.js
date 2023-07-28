@@ -25,6 +25,18 @@ app.get('/about_us', (req, res) => {
     res.redirect('contacts')
 })
 
+app.get('/posts/:id', (req, res) => {
+    res.sendFile(createPath('post'))
+})
+
+app.get('/add-post', (req, res) => {
+    res.sendFile(createPath('add-post'))
+})
+
+app.get('/posts', (req, res) => {
+    res.sendFile(createPath('posts'))
+})
+
 app.use((req, res) => {
     // res.statusCode = 404
     res
