@@ -7,6 +7,7 @@ const PORT = 3000
 
 const createPath = (page) => path.resolve(__dirname, 'ejs-views', `${page}.ejs`)
 
+// шаблонизатор (вместо статики)
 app.set('view engine', 'ejs')
 
 app.listen(PORT, 'localhost', (error) => {
