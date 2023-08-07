@@ -19,10 +19,27 @@
               <% } %>
               <span><%= author %></span>
             </div>
+            <button class="btn-delete" data-id="<%= id %>">
+              <i class="fas fa-trash-alt" data-id="<%= id %>"></i>
+            </button>
           </article>
         </li>
       <% }) %>
     <% } %>
   </ul>
+
+  <script>
+    document.addEventListener('click', (e) => {
+      const id = e.target?.dataset?.id || null
+      if (id) {
+        fetch(`/posts/${id}`, {
+          method: 'DELETE',
+        }).then(() => {
+          window.location.reload()
+        })
+      }
+    })
+  </script>
+
 </body>
 </html>
