@@ -4,6 +4,7 @@ const mongoose = require('mongoose')
 const methodOverride = require('method-override')
 const postRoutes = require('./routes/post-routes')
 const contactRoutes = require('./routes/contact-routes')
+const createPath = require('./helpers/create-path')
 
 const app = express()
 

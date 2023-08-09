@@ -1,18 +1,9 @@
 const express = require('express')
-const Post = require('../models/post')
+const { getPost } = require('../controllers/post-controller')
 
 const router = express.Router()
 
-router.get('/posts/:id', (req, res) => {
-    const title = 'Post'
-    Post
-        .findById(req.params.id)
-        .then((post) => res.render(createPath('post'), { post, title }))
-        .catch((error) => {
-            console.log(error)
-            res.render(createPath('error', { title: 'Error' }))
-        })
-})
+router.get('/posts/:id', getPost)
 
 router.delete('/posts/:id', (req, res) => {
     const title = 'Post'
