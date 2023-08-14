@@ -2,7 +2,7 @@ const express = require('express')
 const { 
     getPost,
     deletePost,
-    getEdit,
+    editPost,
     addPost,
     getPosts
 } = require('../controllers/api-post-controller')
