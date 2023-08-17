@@ -20,5 +20,8 @@
     "mongoose": "^7.4.1",
     "morgan": "^1.10.0"
   },
-  "description": ""
+  "description": "",
+  "engines": {
+    "node": "18.16.1"
+  }
 }
