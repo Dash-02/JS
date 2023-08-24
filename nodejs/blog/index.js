@@ -3,13 +3,14 @@ import mongoose from 'mongoose';
 
 import {
     registerValidation,
-    loginValidation
+    loginValidation,
+    postCreateValidation
 } from './validations/validations.js';
 
 import checkAuth from './utils/checkAuth.js';
 
 import * as UserController from './controllers/UserController.js';
-import * as PostController from './controllers/PostController.js';
+import * as postController from './controllers/postController.js';
 
 mongoose
     .connect(
@@ -26,11 +27,11 @@ app.post('/auth/login', loginValidation, UserController.login);
 app.post('/auth/register', registerValidation, UserController.register);
 app.get('/auth/me', checkAuth, UserController.getMe);
 
-app.get('/posts', PostController.getAll);
-app.get('/posts/:id', PostController.getAll);
-app.get('/posts', checkAuth, UserController.getMe);
-app.get('/posts', checkAuth, UserController.getMe);
-app.get('/posts', checkAuth, UserController.getMe);
+// app.get('/posts', postController.getAll);
+// app.get('/posts/:id', postController.getOne);
+app.post('/posts', checkAuth, postCreateValidation, postController.create);
+// app.delete('/posts', postController.remove);
+// app.patch('/posts', postController.update);
 
 app.listen(4444, (err) => {
     if (err) {
