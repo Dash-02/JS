@@ -1,0 +1,41 @@
+body {
+    margin: 0;
+  
+    font-family: 'Playpen Sans';
+    font-size: 14px;
+    color: #006666;
+  
+    background-color: #99ff99;
+  }
+
+  .start {
+    background-color: #00cc99;
+
+    border-radius: 2px;
+    border: 0;
+
+    cursor: pointer;
+
+    font-family: inherit;
+    font-style: 18px;
+    color: #006666;
+    font-weight: 600;
+
+    text-decoration: none;
+    text-align: center;
+}
+
+.mid_div {
+    background-color: #00ff99;
+
+    max-width: 70%;
+
+    margin: auto;
+    padding: auto;
+
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    /* flex-wrap: wrap;
+    align-items: stretch;*/
+}
