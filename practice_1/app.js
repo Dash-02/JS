@@ -1,5 +1,3 @@
-// .getElementByID() - возвращает ссылку на первый объект с указанным значением атрибута ID
-// window.document возвращает ссылку на документ, содержащийся в окне
 const result = document.getElementById('result')
 const input1 = document.getElementById('input1')
 const input2 = document.getElementById('input2')
@@ -11,9 +9,6 @@ const calculateMult = document.getElementById('multiplication')
 const calculatePow = document.getElementById('pow')
 let action = '+'
 
-//console.log(typeof sum)
-
-// onclick возвращает обработчик события click на текущем элементе
 calculatePlus.onclick = function () {
     action = '+'
 }
@@ -35,7 +30,6 @@ function printResult(resultElement) {
     } else {
         result.style.color = 'green'
     }
-    // textContent позваоляет задавать или получать текстовое содержимое элемента
     result.textContent = resultElement
 }
 
@@ -53,7 +47,6 @@ function computeNumbersWithAction (inp1, inp2, actionSymbol) {
     } else if (actionSymbol == '^') {
         return Math.pow(num1, num2)
     }
-    //return actionSymbol == '+' ? num1 + num2 : num1 - num2
 }
 
 calculate.onclick = function () {
